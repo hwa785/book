@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+
+    <title>결과</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+            
+        }
+
+        .card {
+            margin: 20px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    
+    <div class="wrap">
+        {% for row in tt %}
+        <center>
+            <div class="top">
+                <h2>오늘 이 책은 어떠신가요?</h2>
+            </div>
+
+            <div>
+                장르 : {{gen}}
+            </div>
+            
+            <img src="{{ row[5] }}" height="400" width="280">
+
+            <div class="card" style="width: 18rem;">
+
+                <div class="card-body">
+                  <h5 class="card-title">책제목</h5>
+                  <p class="card-text">{{ row[0] }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  
+                  <li class="list-group-item">저자 : {{ row[1] }}</li>
+                  <li class="list-group-item">가격 : {{ row[2] }}</li>
+                  <li class="list-group-item">리뷰 수 : {{ row[3] }}</li>
+                  <li class="list-group-item">별점 : <img src='{{ row[4] }}'></src></li>
+                </ul>
+                
+            </div>
+
+            <button onClick="window.location.reload()">새로고침</button>
+            <button type="button" onclick="location.href='/'"> 돌아가기 </button>   
+
+        </center>
+        {% endfor %}
+    </div>
+    
+
+</body>
+</html>
