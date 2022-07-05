@@ -118,19 +118,20 @@ def result():
         cur.close()
         conn.close()
 
-        model = RandomForestRegressor()
+        # model = RandomForestRegressor()
 
-        target = 'bookid'
-        features = ['price','review']
+        # target = 'bookid'
+        # features = ['price','review']
 
-        X_test = df[features]
-        y_test = df[target]
-        row = X_test.sample()
-        model = model.fit(X_test, y_test)
-        re=model.predict(row)
-        number=round(re[0])
-        df = df[df['bookid'] == number]
-        row = df.values.tolist()
+        # X_test = df[features]
+        # y_test = df[target]
+        # row = X_test.sample()
+        # model = model.fit(X_test, y_test)
+        # re=model.predict(row)
+        # number=round(re[0])
+        # df = df[df['bookid'] == number]
+        row = df.sample()
+        row = row.values.tolist()
 
 
         
